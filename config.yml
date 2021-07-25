@@ -1,0 +1,14 @@
+--
+
+Content:
+  Blog:
+    Access: default 
+    type: default
+    content:
+      article:
+        - a
+      index:
+        - null
+      
+
+  Life:
