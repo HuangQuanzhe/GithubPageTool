@@ -1,8 +1,11 @@
-config_name: AAA_Config
+config_name: AAAConfig
 content:
   Bacon:
     __articles:
     - 虽无才能，却有性格.md
+    __attribute: &id001
+      Index: true
+      Visibility: true
     __resouces: []
   Blog:
     __articles:
@@ -14,6 +17,7 @@ content:
     - 第一篇.md
     - 算法刷题小记-0.md
     - 设计、搬砖与糊墙.md
+    __attribute: *id001
     __resouces: []
   Life:
     __articles:
@@ -27,9 +31,11 @@ content:
     - 想要飞.md
     - 打卡.md
     - 砖家.md
+    __attribute: *id001
     __resouces: []
     image:
       __articles: []
+      __attribute: *id001
       __resouces:
       - 加菲猫不过情人节_0.jpg
       - 加菲猫不过情人节_1.jpg
@@ -37,6 +43,7 @@ content:
       - 尤里安想成为杨_1.jpg
     music:
       __articles: []
+      __attribute: *id001
       __resouces:
       - Surface - Shower Me With Your Love.mp3
       - 久石让-太阳照常升起.mp3
@@ -44,8 +51,10 @@ content:
     __articles:
     - ReadingNotesIndex.md
     - 马恩选集.md
+    __attribute: *id001
     __resouces: []
   __articles:
   - index.md
+  __attribute: *id001
   __resouces:
   - _config.yml

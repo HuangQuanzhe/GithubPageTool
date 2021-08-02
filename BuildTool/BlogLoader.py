@@ -4,6 +4,13 @@ from ConfigLoader import Config
 
 blacklist = [".git","__articles"]
 
+default_attribute = {
+    "Visibility": True,
+    "Index": True,
+    # "Resource": False
+}
+
+
 def load_index(root):
     folders = os.walk(root)
     root_folder = []
@@ -47,6 +54,7 @@ def load_arch(root):
     index_list = load_index(root)
     arch["__articles"] = load_article(root)
     arch["__resouces"] = load_resouce(root)
+    arch["__attribute"] = default_attribute
     for index in index_list:
         arch[index] = load_arch(root+"\\"+index)
 
@@ -56,6 +64,6 @@ def load_arch(root):
 if __name__ == "__main__":
     content = load_arch("C:\hqzforgithub@163.com\HuangQuanzhe.github.io\docs")
     # print(content)
-    c = Config.ConfigBuilder().add_config_name("AAA_Config").add_content(content).build()
+    c = Config.ConfigBuilder().add_config_name("AAAConfig").add_content(content).build()
     print(c)
     c.write_config()

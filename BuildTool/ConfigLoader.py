@@ -38,12 +38,17 @@ class Config(object):
         def build(self):
             return Config(self)
 
-def ConfigLoader():
-    
-
-    return Config.ConfigBuilder().add_config_name("AAA_Config").build()
+def ConfigLoader(file_name):
+    with open(file_name, encoding="utf-8") as f:
+        data = yaml.load(f)
+        print(data)
+        return Config.ConfigBuilder() \
+            .add_config_name(data["config_name"]) \
+            .add_content(data["content"]) \
+            .build()
 
 
 if __name__ == "__main__":
-    c = Config.ConfigBuilder().add_config_name("AAA_Config").build()
-    print(c)
+    # c = Config.ConfigBuilder().add_config_name("AAA_Config").build()
+    # print(c)
+    ConfigLoader("AAA_Config.yml")
